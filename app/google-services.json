@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1040780308777",
+    "firebase_url": "https://four-amigos.firebaseio.com",
+    "project_id": "four-amigos",
+    "storage_bucket": "four-amigos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040780308777:android:b58de395e1eea838a34738",
+        "android_client_info": {
+          "package_name": "sg.edu.rp.c346.id18004536.fouramigos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040780308777-edv776rnaprj0cinhej6l4mrici2f4o8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyh8WHHrV0eclfaXsoB3f2kqyBS9vWoio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040780308777-edv776rnaprj0cinhej6l4mrici2f4o8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
