@@ -3,12 +3,10 @@ package sg.edu.rp.c346.id18004536.fouramigos.Adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,19 +24,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import sg.edu.rp.c346.id18004536.fouramigos.MainActivity;
-import sg.edu.rp.c346.id18004536.fouramigos.MessageActivity;
 import sg.edu.rp.c346.id18004536.fouramigos.Model.Chat;
-import sg.edu.rp.c346.id18004536.fouramigos.Model.User;
 import sg.edu.rp.c346.id18004536.fouramigos.R;
-import sg.edu.rp.c346.id18004536.fouramigos.StartActivity;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder> {
 
@@ -87,9 +79,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         holder.show_message.setText(chat.getMessage());
         holder.timeTv.setText(dateTime);
 
-        holder.messageLayout.setOnClickListener(new View.OnClickListener() {
+        holder.messageLayout.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onLongClick(View v) {
                 AlertDialog.Builder builder =  new AlertDialog.Builder(mContext);
                 builder.setTitle("Delete");
                 builder.setMessage("Do you want to delete this message?");
@@ -97,17 +89,19 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                            deleteMessage(position);
+                        deleteMessage(position);
                     }
                 });
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
+                        dialog.dismiss();
                     }
                 });
-                builder.create().show();
 
+
+                builder.create().show();
+                return false;
             }
         });
 
